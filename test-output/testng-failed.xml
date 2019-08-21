@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Yahoo App Automation Suite]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="emailid" value="sajwan_jyoti@yahoo.com"/>
+  <parameter name="url" value="https://www.yahoo.com/"/>
+  <test name=" Different testing feature of Test(failed)">
+    <classes>
+      <class name="com.test.GoogleFeatureTest">
+        <methods>
+          <include name="setup"/>
+          <include name="mailLinkText"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.test.GoogleFeatureTest -->
+      <class name="com.test.GoogleTittleTest">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.test.GoogleTittleTest -->
+      <class name="com.test.TestNgBasics">
+        <methods>
+          <include name="setUp"/>
+          <include name="logOut"/>
+          <include name="login"/>
+          <include name="deleteAllCookies"/>
+          <include name="closeBrowser"/>
+          <include name="enterURL"/>
+          <include name="generateTestReport"/>
+          <include name="launchBrowse"/>
+        </methods>
+      </class> <!-- com.test.TestNgBasics -->
+    </classes>
+  </test> <!--  Different testing feature of Test(failed) -->
+</suite> <!-- Failed suite [Yahoo App Automation Suite] -->

@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Yahoo_App_Automation_Suite">
+              <span class="suite-name border-failed">Yahoo App Automation Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Yahoo_App_Automation_Suite">
+                    <span>E:\SEL\Workspace_Eclipse\OfficeTool\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Yahoo_App_Automation_Suite">
+                    <span class="test-stats">2 tests</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Yahoo_App_Automation_Suite">
+                    <span>4 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Yahoo_App_Automation_Suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Yahoo_App_Automation_Suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Yahoo_App_Automation_Suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Yahoo_App_Automation_Suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">27 methods, 1 failed,   26 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Yahoo_App_Automation_Suite" class="hide-methods failed suite-Yahoo_App_Automation_Suite"> (hide)</a> <!-- hide-methods failed suite-Yahoo_App_Automation_Suite -->
+                      <a href="#" panel-name="suite-Yahoo_App_Automation_Suite" class="show-methods failed suite-Yahoo_App_Automation_Suite"> (show)</a> <!-- show-methods failed suite-Yahoo_App_Automation_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Yahoo_App_Automation_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleFeatureTest" hash-for-method="mailLinkText">mailLinkText</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Yahoo_App_Automation_Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Yahoo_App_Automation_Suite" class="hide-methods passed suite-Yahoo_App_Automation_Suite"> (hide)</a> <!-- hide-methods passed suite-Yahoo_App_Automation_Suite -->
+                      <a href="#" panel-name="suite-Yahoo_App_Automation_Suite" class="show-methods passed suite-Yahoo_App_Automation_Suite"> (show)</a> <!-- show-methods passed suite-Yahoo_App_Automation_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Yahoo_App_Automation_Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.TestNgFeatures" hash-for-method="HomePageTest">HomePageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.TestNgFeatures" hash-for-method="RegisPageTest">RegisPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.TestNgFeatures" hash-for-method="SearchPageTest">SearchPageTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleTittleTest" hash-for-method="googleLogoText">googleLogoText</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleFeatureTest" hash-for-method="googleLogoText">googleLogoText</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleTittleTest" hash-for-method="googleTittleTest">googleTittleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleFeatureTest" hash-for-method="googleTittleTest">googleTittleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.TestNgBasics" hash-for-method="googleTittleTest">googleTittleTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.ExceptionTimeOutTest" hash-for-method="infintLoopTest">infintLoopTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.TestNgFeatures" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.TestNgBasics" hash-for-method="serachElement">serachElement</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.InvocationCountTest" hash-for-method="sum">sum</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.ExceptionTimeOutTest" hash-for-method="test1">test1</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleFeatureTest" hash-for-method="test4">test4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleFeatureTest" hash-for-method="test5">test5</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.test.GoogleFeatureTest" hash-for-method="test6">test6</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Yahoo_App_Automation_Suite" title="com.parameters.ParameterTest" hash-for-method="yahooLoginTest(chrome, https://www.yahoo.com/, sajwan_jyoti@yahoo.com)">yahooLoginTest(chrome, https://www.yahoo.com/, sajwan_jyoti@yahoo.com)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Yahoo_App_Automation_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Yahoo_App_Automation_Suite" class="panel Yahoo_App_Automation_Suite">
+          <div class="suite-Yahoo_App_Automation_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.test.GoogleFeatureTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="mailLinkText">
+                  </a> <!-- mailLinkText -->
+                  <span class="method-name">mailLinkText</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;mail&quot;}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:48&apos;
+System info: host: &apos;OMGINDIA244&apos;, ip: &apos;192.168.28.37&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 75.0.3770.90 (a6dcaf7e3ec6f..., userDataDir: C:\Users\JYOTI~1.SAJ\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50880}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 27e7afb5539c9f08f23cbf95d3f38a72
+*** Element info: {Using=link text, value=mail}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
+	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.test.GoogleFeatureTest.mailLinkText(GoogleFeatureTest.java:45)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-failed -->
+          <div class="suite-Yahoo_App_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.TestNgFeatures</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="HomePageTest">
+                  </a> <!-- HomePageTest -->
+                  <span class="method-name">HomePageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="RegisPageTest">
+                  </a> <!-- RegisPageTest -->
+                  <span class="method-name">RegisPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchPageTest">
+                  </a> <!-- SearchPageTest -->
+                  <span class="method-name">SearchPageTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest">
+                  </a> <!-- loginTest -->
+                  <span class="method-name">loginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-passed -->
+          <div class="suite-Yahoo_App_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.InvocationCountTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sum">
+                  </a> <!-- sum -->
+                  <span class="method-name">sum</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-passed -->
+          <div class="suite-Yahoo_App_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.ExceptionTimeOutTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="infintLoopTest">
+                  </a> <!-- infintLoopTest -->
+                  <span class="method-name">infintLoopTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test1">
+                  </a> <!-- test1 -->
+                  <span class="method-name">test1</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-passed -->
+          <div class="suite-Yahoo_App_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.GoogleTittleTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="googleLogoText">
+                  </a> <!-- googleLogoText -->
+                  <span class="method-name">googleLogoText</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="googleTittleTest">
+                  </a> <!-- googleTittleTest -->
+                  <span class="method-name">googleTittleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-passed -->
+          <div class="suite-Yahoo_App_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.GoogleFeatureTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="googleLogoText">
+                  </a> <!-- googleLogoText -->
+                  <span class="method-name">googleLogoText</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="googleTittleTest">
+                  </a> <!-- googleTittleTest -->
+                  <span class="method-name">googleTittleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test4">
+                  </a> <!-- test4 -->
+                  <span class="method-name">test4</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test5">
+                  </a> <!-- test5 -->
+                  <span class="method-name">test5</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test6">
+                  </a> <!-- test6 -->
+                  <span class="method-name">test6</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-passed -->
+          <div class="suite-Yahoo_App_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.test.TestNgBasics</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="googleTittleTest">
+                  </a> <!-- googleTittleTest -->
+                  <span class="method-name">googleTittleTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="serachElement">
+                  </a> <!-- serachElement -->
+                  <span class="method-name">serachElement</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-passed -->
+          <div class="suite-Yahoo_App_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.parameters.ParameterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="yahooLoginTest(chrome, https://www.yahoo.com/, sajwan_jyoti@yahoo.com)">
+                  </a> <!-- yahooLoginTest(chrome, https://www.yahoo.com/, sajwan_jyoti@yahoo.com) -->
+                  <span class="method-name">yahooLoginTest</span>
+                  <span class="parameters">(chrome, https://www.yahoo.com/, sajwan_jyoti@yahoo.com)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Yahoo_App_Automation_Suite-class-passed -->
+        </div> <!-- panel Yahoo_App_Automation_Suite -->
+        <div panel-name="test-xml-Yahoo_App_Automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">E:\SEL\Workspace_Eclipse\OfficeTool\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Yahoo App Automation Suite&quot;&gt;
+  &lt;test name=&quot;Yahoo App Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;emailid&quot; value=&quot;sajwan_jyoti@yahoo.com&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://www.yahoo.com/&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.parameters.ParameterTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Yahoo App Test --&gt;
+  &lt;test name=&quot; Different testing feature of Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.test.ExceptionTimeOutTest&quot;/&gt;
+      &lt;class name=&quot;com.test.GoogleFeatureTest&quot;/&gt;
+      &lt;class name=&quot;com.test.GoogleTittleTest&quot;/&gt;
+      &lt;class name=&quot;com.test.InvocationCountTest&quot;/&gt;
+      &lt;class name=&quot;com.test.TestNgBasics&quot;/&gt;
+      &lt;class name=&quot;com.test.TestNgFeatures&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!--  Different testing feature of Test --&gt;
+&lt;/suite&gt; &lt;!-- Yahoo App Automation Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Yahoo_App_Automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Yahoo App Automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Yahoo App Test (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name"> Different testing feature of Test (6 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Yahoo_App_Automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Yahoo App Automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">LinkTest</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">mailLinkText</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Logo</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">googleLogoText</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Test</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">test4</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">test5</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">test6</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Tittle</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">googleTittleTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Yahoo_App_Automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Yahoo App Automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Yahoo_App_Automation_Suite');
+function tableData_Yahoo_App_Automation_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(27);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'mailLinkText')
+data.setCell(0, 2, 'com.test.GoogleFeatureTest')
+data.setCell(0, 3, 30049);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'yahooLoginTest')
+data.setCell(1, 2, 'com.parameters.ParameterTest')
+data.setCell(1, 3, 16027);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'googleLogoText')
+data.setCell(2, 2, 'com.test.GoogleFeatureTest')
+data.setCell(2, 3, 215);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'googleLogoText')
+data.setCell(3, 2, 'com.test.GoogleTittleTest')
+data.setCell(3, 3, 76);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'infintLoopTest')
+data.setCell(4, 2, 'com.test.ExceptionTimeOutTest')
+data.setCell(4, 3, 20);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'googleTittleTest')
+data.setCell(5, 2, 'com.test.GoogleFeatureTest')
+data.setCell(5, 3, 9);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'googleTittleTest')
+data.setCell(6, 2, 'com.test.GoogleTittleTest')
+data.setCell(6, 3, 8);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'googleTittleTest')
+data.setCell(7, 2, 'com.test.TestNgBasics')
+data.setCell(7, 3, 5);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'sum')
+data.setCell(8, 2, 'com.test.InvocationCountTest')
+data.setCell(8, 3, 3);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'sum')
+data.setCell(9, 2, 'com.test.InvocationCountTest')
+data.setCell(9, 3, 2);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'sum')
+data.setCell(10, 2, 'com.test.InvocationCountTest')
+data.setCell(10, 3, 2);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'sum')
+data.setCell(11, 2, 'com.test.InvocationCountTest')
+data.setCell(11, 3, 2);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'sum')
+data.setCell(12, 2, 'com.test.InvocationCountTest')
+data.setCell(12, 3, 2);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'SearchPageTest')
+data.setCell(13, 2, 'com.test.TestNgFeatures')
+data.setCell(13, 3, 2);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'test6')
+data.setCell(14, 2, 'com.test.GoogleFeatureTest')
+data.setCell(14, 3, 1);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'test1')
+data.setCell(15, 2, 'com.test.ExceptionTimeOutTest')
+data.setCell(15, 3, 1);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'sum')
+data.setCell(16, 2, 'com.test.InvocationCountTest')
+data.setCell(16, 3, 1);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'test4')
+data.setCell(17, 2, 'com.test.GoogleFeatureTest')
+data.setCell(17, 3, 1);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'sum')
+data.setCell(18, 2, 'com.test.InvocationCountTest')
+data.setCell(18, 3, 1);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'serachElement')
+data.setCell(19, 2, 'com.test.TestNgBasics')
+data.setCell(19, 3, 1);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'sum')
+data.setCell(20, 2, 'com.test.InvocationCountTest')
+data.setCell(20, 3, 1);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'RegisPageTest')
+data.setCell(21, 2, 'com.test.TestNgFeatures')
+data.setCell(21, 3, 1);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'test5')
+data.setCell(22, 2, 'com.test.GoogleFeatureTest')
+data.setCell(22, 3, 1);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'sum')
+data.setCell(23, 2, 'com.test.InvocationCountTest')
+data.setCell(23, 3, 1);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'sum')
+data.setCell(24, 2, 'com.test.InvocationCountTest')
+data.setCell(24, 3, 1);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'HomePageTest')
+data.setCell(25, 2, 'com.test.TestNgFeatures')
+data.setCell(25, 3, 1);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'loginTest')
+data.setCell(26, 2, 'com.test.TestNgFeatures')
+data.setCell(26, 3, 0);
+window.suiteTableData['Yahoo_App_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Yahoo_App_Automation_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 46 seconds</span>
+              <div id="times-div-Yahoo_App_Automation_Suite">
+              </div> <!-- times-div-Yahoo_App_Automation_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Yahoo_App_Automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Yahoo App Automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Yahoo_App_Automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Yahoo_App_Automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.TestNgBasics</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.parameters.ParameterTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">yahooLoginTest(chrome, https://www.yahoo.com/, sajwan_jyoti@yahoo.com)</span>
+                <span class="method-start">23 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.TestNgBasics</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">launchBrowse</span>
+                <span class="method-start">16065 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.ExceptionTimeOutTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">infintLoopTest</span>
+                <span class="method-start">16067 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test1</span>
+                <span class="method-start">16088 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.GoogleFeatureTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">16094 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">googleLogoText</span>
+                <span class="method-start">27049 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">27265 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">27899 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">googleTittleTest</span>
+                <span class="method-start">38386 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">38395 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">39019 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">mailLinkText</span>
+                <span class="method-start">49306 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">79358 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">80005 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test4</span>
+                <span class="method-start">90413 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">90415 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">91034 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test5</span>
+                <span class="method-start">101527 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">101529 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">102180 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test6</span>
+                <span class="method-start">112836 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">112837 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.GoogleTittleTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">113457 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">googleLogoText</span>
+                <span class="method-start">123766 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">123843 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">124474 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">googleTittleTest</span>
+                <span class="method-start">134884 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">134893 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.InvocationCountTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135528 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135533 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135539 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135543 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135548 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135556 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135561 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135564 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135566 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">sum</span>
+                <span class="method-start">135568 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.TestNgBasics</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">login</span>
+                <span class="method-start">135574 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">enterURL</span>
+                <span class="method-start">135575 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">googleTittleTest</span>
+                <span class="method-start">135575 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">logOut</span>
+                <span class="method-start">135581 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">enterURL</span>
+                <span class="method-start">135582 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">serachElement</span>
+                <span class="method-start">135582 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">logOut</span>
+                <span class="method-start">135584 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">deleteAllCookies</span>
+                <span class="method-start">135584 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.TestNgFeatures</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">loginTest</span>
+                <span class="method-start">135585 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">HomePageTest</span>
+                <span class="method-start">135587 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RegisPageTest</span>
+                <span class="method-start">135589 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SearchPageTest</span>
+                <span class="method-start">135594 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.test.TestNgBasics</div> <!-- chronological-class-name -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">135596 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-suite after">
+                <span class="method-name">generateTestReport</span>
+                <span class="method-start">135608 ms</span>
+              </div> <!-- configuration-suite after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
