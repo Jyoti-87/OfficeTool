@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestNgBasics {
@@ -40,7 +41,7 @@ close browser
 	}	
 		
 	@BeforeClass //3
-	public void login() {
+	public void signUp() {
 		System.out.println("login to app");
 	}
 	
@@ -59,6 +60,13 @@ close browser
 	@BeforeMethod //4
 	public void enterURL() {
 		System.out.println("enter url");
+	}
+	
+	@Test (dataProvider = "getdata")
+	public void login(String username, String Password) 
+	{
+		System.out.println(username);
+		System.out.println(Password);
 	}
 	
 //	Test cases -- Starting with @test
@@ -97,7 +105,23 @@ close browser
 		System.out.println("generate report");
 	}
 	
-	
+	@DataProvider
+	public Object[][] getdata()
+	{
+		Object[][] data = new Object[3][2];
+		
+		data[0][0] = "set1oneUserName";
+		data[0][1] = "set1password";
+		
+		data[1][0] = "set2oneUserName";
+		data[1][1] = "set2password";
+		
+		data[2][0] = "set3oneUserName";
+		data[2][1] = "set3password";
+		return data;
+		
+		
+	}
 	
 	
 	

@@ -8,13 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class GoogleTittleTest {
 	
 	WebDriver driver;
 
-	@BeforeMethod
+	@BeforeMethod (groups="Tittle")
 	public void setup()
 	{
 		System.setProperty("webdriver.chrome.driver", "E://SEL//driver//chromedriver.exe");
@@ -26,7 +27,8 @@ public class GoogleTittleTest {
 	}
 
 	
-	@Test  (priority =2,groups="Tittle") // Use assert to validate condition 
+	
+	@Test  (groups="Tittle") // Use assert to validate condition 
 	public void googleTittleTest() 
 	{
 		String tittle= driver.getTitle();
@@ -37,7 +39,7 @@ public class GoogleTittleTest {
 	
 	
 	
-	@Test ()
+	@Test (dependsOnMethods="googleTittleTest")
 	public void googleLogoText()
 	{
 		boolean b = driver.findElement(By.id("hplogo")).isDisplayed();
@@ -46,6 +48,12 @@ public class GoogleTittleTest {
 		Assert.assertEquals(true, b);
 	}
 	
+	
+	@Test 
+	public void googleSearch()
+	{
+		System.out.println("Check google search");
+	}
 	
 	@AfterMethod
 	public void tearDown()

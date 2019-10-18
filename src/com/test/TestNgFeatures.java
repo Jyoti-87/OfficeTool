@@ -1,11 +1,16 @@
 package com.test;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
-public class TestNgFeatures {
+import com.datadriven.test.TestBase;
+
+public class TestNgFeatures extends TestBase {
 	
-	@Test
-	public void loginTest() {
+	@Test (groups= "Tittle")
+	public void loginTest() throws IOException {
+		Login();
 		System.out.println("login test");
 //		int i= 9/0;
 	}

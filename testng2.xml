@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel = "tests" thread-count ="6">
+<listeners>
+<listener class-name = "com.test.Listeners"/>
+</listeners>
+  <test name="Test">
+    <classes>
+      <class name="com.excel.utility.ExcelReader"/>
+     <class name="com.datadriven.test.HalfEbayTest"/>
+     </classes>
+  </test> <!-- Test -->
+  
+     <test name="Test2">
+    <classes>
+         <class name="com.test.ExceptionTimeOutTest"/>
+      <class name="com.test.TestNgBasics"/>
+      <class name="com.test.TestNgFeatures"/>
+       <class name="com.test.InvocationCountTest"/>
+     <class name="com.test.GoogleTittleTest">
+     <methods>
+     <exclude name = "googleSearch"/>
+     </methods>
+     </class>
+      <class name="com.test.GoogleFeatureTest">
+      <methods>
+      <exclude name = "google.*"/>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

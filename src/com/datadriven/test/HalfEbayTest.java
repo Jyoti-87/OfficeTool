@@ -1,5 +1,6 @@
 package com.datadriven.test;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -10,6 +11,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.excel.utility.ExcelReader;
 
 public class HalfEbayTest {
 
@@ -31,42 +34,47 @@ public class HalfEbayTest {
 	}
 	
 	
-	@DataProvider
-	public void getTestData() {
+	@DataProvider(name = "Registration form")
+	public Object[][] getTestData() throws IOException {
+		ExcelReader Reader = new ExcelReader();
 		
+	Object[][] excel = Reader.exceldata("E:\\SEL\\Workspace_Eclipse\\OfficeTool\\src\\com\\testdata\\HalfEbayTestData.xlsx", "RegTestData");
+	return excel;
 	}
 	
-	@Test
+	@Test (dataProvider= "Registration form")
 	public void halfEbayRegistrationPageTest(String firstname, String lastname, String address1, String address2, String city,
-			String state, String zip, String email )
+			String state, String zipcode, String emailaddress ) throws InterruptedException
 	{
 		driver.findElement(By.id("firstname")).clear();
-		driver.findElement(By.id("firstname")).sendKeys("firstname");
+		driver.findElement(By.id("firstname")).sendKeys(firstname);
 		
 		driver.findElement(By.id("lastname")).clear();
-		driver.findElement(By.id("lastname")).sendKeys("lastname");
+		driver.findElement(By.id("lastname")).sendKeys(lastname);
 		
 		driver.findElement(By.id("address1")).clear();
-		driver.findElement(By.id("address1")).sendKeys("address1");
+		driver.findElement(By.id("address1")).sendKeys(address1);
 		
 		driver.findElement(By.id("address2")).clear();
-		driver.findElement(By.id("address2")).sendKeys("address2");
+		driver.findElement(By.id("address2")).sendKeys(address2);
 		
 		driver.findElement(By.id("city")).clear();
-		driver.findElement(By.id("city")).sendKeys("city");
+		driver.findElement(By.id("city")).sendKeys(city);
 		
+				
+		Select se = new Select(driver.findElement(By.xpath(".//select[@id='state']")));
 		
-		Select se = new Select(driver.findElement(By.id("state")));
-		se.selectByVisibleText("state");
+//		Thread.sleep(3000);
+		se.selectByVisibleText(state);
 		
 		driver.findElement(By.id("zip")).clear();
-		driver.findElement(By.id("zip")).sendKeys("zipcode");
+		driver.findElement(By.id("zip")).sendKeys(zipcode);
 		
 		driver.findElement(By.id("email")).clear();
-		driver.findElement(By.id("email")).sendKeys("emailaddress");
+		driver.findElement(By.id("email")).sendKeys(emailaddress);
 		
 		driver.findElement(By.id("retype_email")).clear();
-		driver.findElement(By.id("retype_email")).sendKeys("retype_email");
+		driver.findElement(By.id("retype_email")).sendKeys(emailaddress);
 		
 		
 	}

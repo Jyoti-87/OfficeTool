@@ -34,7 +34,7 @@ public class ExcelReader {
 	     for(int j=0;j<cell;j++)
 			{
 			CellType type=sheet.getRow(i).getCell(j).getCellType();
-		     System.out.println(type);
+//		     System.out.println(type);
 		      if (type.name().equals("STRING"))
 		        {
 				array[i-1][j]=sheet.getRow(i).getCell(j).getStringCellValue();

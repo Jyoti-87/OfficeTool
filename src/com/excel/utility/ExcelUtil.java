@@ -20,8 +20,8 @@ import java.io.IOException;
 		public static void getRowCount() {
 			
 			try {
-				String projectPath = System.getProperty("E:\\SEL\\Workspace_Eclipse\\OfficeToo");
-				FileInputStream fis= new FileInputStream(projectPath+ "src\\com\\testdata\\HalfEbayTestData.xlsx");
+				
+				FileInputStream fis= new FileInputStream("E:\\SEL\\Workspace_Eclipse\\OfficeTool\\src\\com\\testdata\\HalfEbayTestData.xlsx");
 				
 				XSSFWorkbook wb = new XSSFWorkbook(fis);
 				XSSFSheet Sheet = wb.getSheet("RegTestData");
