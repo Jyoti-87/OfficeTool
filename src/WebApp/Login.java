@@ -60,7 +60,7 @@ public class Login {
 	    
 	    
 
-	    wd1.findElement(By.xpath(".//input[@type='text']")).sendKeys("jyoti.sajwan@optimisemedia.com");
+	    wd1.findElement(By.xpath(".//input[@type='email']")).sendKeys("jyoti.sajwan@optimisemedia.com");
 	    wd1.findElement(By.xpath("//input[@type= 'password']")).sendKeys("Saanvi@26");
 //	    wd1.findElement(By.xpath("//span[text()='English (UK)']")).click();
 //	    wd1.findElement(By.xpath("//span[text()='Portuguese']")).click();
@@ -110,8 +110,14 @@ public class Login {
     	Thread.sleep(3000);
     	WebElement NC6 =wd1.findElement(By.xpath("//div[text()='Daily']"));
     	actions.moveToElement(NC6).click().build().perform(); 
-    	WebElement NC7 =wd1.findElement(By.xpath("//li[text()='Twice Weekly']"));
-    	actions.moveToElement(NC7).click().build().perform(); 
+//    	WebElement NC7 =wd1.findElement(By.xpath("//li[text()='Twice Weekly']"));
+//    	actions.moveToElement(NC7).click().build().perform(); 
+    	
+    	WebDriverWait wait=new WebDriverWait(wd1, 20);
+    	
+    	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Daily']")));
+    	
+    	actions.moveToElement(wd1.findElement(By.xpath("//li[text()='Twice Weekly']"))).click().build().perform();
     	
     	
     	

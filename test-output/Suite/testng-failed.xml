@@ -1,99 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="6" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
-  <listeners>
-    <listener class-name="com.test.Listeners"/>
-  </listeners>
-  <test name="Test(failed)" parallel="classes">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="emailid" value="sajwan_jyoti@yahoo.com"/>
+  <parameter name="url" value="http://www.yahoo.com"/>
+  <test name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="emailid" value="sajwan_jyoti@yahoo.com"/>
+    <parameter name="url" value="http://www.yahoo.com"/>
     <classes>
-      <class name="com.excel.utility.ExcelReader">
+      <class name="com.parameters.ParameterTest">
         <methods>
-          <include name="test"/>
+          <include name="mobileSignCarLoan"/>
         </methods>
-      </class> <!-- com.excel.utility.ExcelReader -->
-      <class name="com.datadriven.test.HalfEbayTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.datadriven.test.HalfEbayTest -->
-      <class name="com.test.GoogleTittleTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.test.GoogleTittleTest -->
-      <class name="com.test.InvocationCountTest">
-        <methods>
-          <include name="checkSuit"/>
-          <include name="checkSuitEnd"/>
-        </methods>
-      </class> <!-- com.test.InvocationCountTest -->
-      <class name="com.test.TestNgBasics">
-        <methods>
-          <include name="setUp"/>
-          <include name="logOut"/>
-          <include name="deleteAllCookies"/>
-          <include name="closeBrowser"/>
-          <include name="enterURL"/>
-          <include name="signUp"/>
-          <include name="generateTestReport"/>
-          <include name="launchBrowse"/>
-        </methods>
-      </class> <!-- com.test.TestNgBasics -->
-      <class name="com.test.GoogleFeatureTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.test.GoogleFeatureTest -->
+      </class> <!-- com.parameters.ParameterTest -->
     </classes>
   </test> <!-- Test(failed) -->
-  <test name="Test2(failed)" parallel="classes">
-    <classes>
-      <class name="com.test.ExceptionTimeOutTest">
-        <methods>
-          <include name="infintLoopTest"/>
-        </methods>
-      </class> <!-- com.test.ExceptionTimeOutTest -->
-      <class name="com.datadriven.test.HalfEbayTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.datadriven.test.HalfEbayTest -->
-      <class name="com.test.GoogleTittleTest">
-        <methods>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.test.GoogleTittleTest -->
-      <class name="com.test.InvocationCountTest">
-        <methods>
-          <include name="checkSuit"/>
-          <include name="checkSuitEnd"/>
-        </methods>
-      </class> <!-- com.test.InvocationCountTest -->
-      <class name="com.test.TestNgBasics">
-        <methods>
-          <include name="setUp"/>
-          <include name="logOut"/>
-          <include name="deleteAllCookies"/>
-          <include name="closeBrowser"/>
-          <include name="enterURL"/>
-          <include name="signUp"/>
-          <include name="generateTestReport"/>
-          <include name="launchBrowse"/>
-        </methods>
-      </class> <!-- com.test.TestNgBasics -->
-      <class name="com.test.GoogleFeatureTest">
-        <methods>
-          <include name="setup"/>
-          <include name="mailLinkText"/>
-          <include name="tearDown"/>
-          <include name="test6"/>
-        </methods>
-      </class> <!-- com.test.GoogleFeatureTest -->
-    </classes>
-  </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Suite] -->

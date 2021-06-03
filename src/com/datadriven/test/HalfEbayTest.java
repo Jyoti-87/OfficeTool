@@ -24,7 +24,7 @@ public class HalfEbayTest {
 	
 	public void setup() {
 		
-		System.setProperty("webdriver.chrome.driver", "E://SEL//driver//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D://webdrivers//chromedriver_win32//chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
