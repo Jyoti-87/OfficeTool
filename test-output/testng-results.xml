@@ -1,49 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25325" started-at="2021-06-03T08:51:59Z" finished-at="2021-06-03T08:52:24Z">
+  <suite name="Default suite" duration-ms="30047" started-at="2021-06-05T13:06:01Z" finished-at="2021-06-05T13:06:31Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25325" started-at="2021-06-03T08:51:59Z" finished-at="2021-06-03T08:52:24Z">
+    <test name="Default test" duration-ms="30047" started-at="2021-06-05T13:06:01Z" finished-at="2021-06-05T13:06:31Z">
       <class name="com.test.AmazonBookBuyTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="setup" is-config="true" duration-ms="5541" started-at="2021-06-03T14:21:59Z" finished-at="2021-06-03T14:22:04Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="setUp" is-config="true" duration-ms="1795" started-at="2021-06-05T18:36:00Z" finished-at="2021-06-05T18:36:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="profileSetup()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="profileSetup" is-config="true" duration-ms="125" started-at="2021-06-05T18:36:01Z" finished-at="2021-06-05T18:36:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- profileSetup -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="setup" is-config="true" duration-ms="3298" started-at="2021-06-05T18:36:01Z" finished-at="2021-06-05T18:36:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="searchBook()[pri:1, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="searchBook" duration-ms="1985" started-at="2021-06-03T14:22:04Z" finished-at="2021-06-03T14:22:06Z">
+        <test-method status="PASS" signature="searchBook()[pri:1, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="searchBook" duration-ms="2829" started-at="2021-06-05T18:36:05Z" finished-at="2021-06-05T18:36:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchBook -->
-        <test-method status="PASS" signature="checkKindleformat()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="checkKindleformat" duration-ms="5433" started-at="2021-06-03T14:22:06Z" depends-on-methods="com.test.AmazonBookBuyTest.searchBook" finished-at="2021-06-03T14:22:12Z">
+        <test-method status="PASS" signature="BookInBestSeller()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="BookInBestSeller" duration-ms="53" started-at="2021-06-05T18:36:08Z" depends-on-methods="com.test.AmazonBookBuyTest.searchBook" finished-at="2021-06-05T18:36:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BookInBestSeller -->
+        <test-method status="PASS" signature="checkBookInfo()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="checkBookInfo" duration-ms="2240" started-at="2021-06-05T18:36:08Z" depends-on-methods="com.test.AmazonBookBuyTest.searchBook" finished-at="2021-06-05T18:36:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkBookInfo -->
+        <test-method status="PASS" signature="checkKindleformat()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="checkKindleformat" duration-ms="8389" started-at="2021-06-05T18:36:10Z" depends-on-methods="com.test.AmazonBookBuyTest.searchBook" finished-at="2021-06-05T18:36:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkKindleformat -->
-        <test-method status="PASS" signature="verifyAllElements()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="verifyAllElements" duration-ms="166" started-at="2021-06-03T14:22:12Z" depends-on-methods="com.test.AmazonBookBuyTest.checkKindleformat" finished-at="2021-06-03T14:22:12Z">
+        <test-method status="PASS" signature="verifyAllElements()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="verifyAllElements" duration-ms="239" started-at="2021-06-05T18:36:18Z" depends-on-methods="com.test.AmazonBookBuyTest.checkKindleformat" finished-at="2021-06-05T18:36:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAllElements -->
-        <test-method status="PASS" signature="correctUserdetails()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="correctUserdetails" duration-ms="3959" started-at="2021-06-03T14:22:12Z" depends-on-methods="com.test.AmazonBookBuyTest.verifyAllElements" finished-at="2021-06-03T14:22:16Z">
+        <test-method status="PASS" signature="correctUserdetails()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="correctUserdetails" duration-ms="3581" started-at="2021-06-05T18:36:19Z" depends-on-methods="com.test.AmazonBookBuyTest.verifyAllElements" finished-at="2021-06-05T18:36:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- correctUserdetails -->
-        <test-method status="PASS" signature="emptyCustomerName()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="emptyCustomerName" duration-ms="683" started-at="2021-06-03T14:22:16Z" depends-on-methods="com.test.AmazonBookBuyTest.correctUserdetails" finished-at="2021-06-03T14:22:16Z">
+        <test-method status="PASS" signature="emptyCustomerName()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="emptyCustomerName" duration-ms="809" started-at="2021-06-05T18:36:22Z" depends-on-methods="com.test.AmazonBookBuyTest.correctUserdetails" finished-at="2021-06-05T18:36:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- emptyCustomerName -->
-        <test-method status="PASS" signature="emptyemail()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="emptyemail" duration-ms="1197" started-at="2021-06-03T14:22:16Z" depends-on-methods="com.test.AmazonBookBuyTest.emptyCustomerName" finished-at="2021-06-03T14:22:18Z">
+        <test-method status="PASS" signature="emptyemail()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="emptyemail" duration-ms="1734" started-at="2021-06-05T18:36:23Z" depends-on-methods="com.test.AmazonBookBuyTest.emptyCustomerName" finished-at="2021-06-05T18:36:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- emptyemail -->
-        <test-method status="PASS" signature="invalidemail()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="invalidemail" duration-ms="4130" started-at="2021-06-03T14:22:18Z" depends-on-methods="com.test.AmazonBookBuyTest.emptyemail" finished-at="2021-06-03T14:22:22Z">
+        <test-method status="PASS" signature="invalidemail()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="invalidemail" duration-ms="4853" started-at="2021-06-05T18:36:25Z" depends-on-methods="com.test.AmazonBookBuyTest.emptyemail" finished-at="2021-06-05T18:36:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidemail -->
-        <test-method status="PASS" signature="withoutPassword()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="withoutPassword" duration-ms="724" started-at="2021-06-03T14:22:22Z" depends-on-methods="com.test.AmazonBookBuyTest.invalidemail" finished-at="2021-06-03T14:22:22Z">
+        <test-method status="PASS" signature="withoutPassword()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="withoutPassword" duration-ms="692" started-at="2021-06-05T18:36:29Z" depends-on-methods="com.test.AmazonBookBuyTest.invalidemail" finished-at="2021-06-05T18:36:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- withoutPassword -->
-        <test-method status="PASS" signature="invalidPassword()[pri:0, instance:com.test.AmazonBookBuyTest@2a18f23c]" name="invalidPassword" duration-ms="1492" started-at="2021-06-03T14:22:22Z" depends-on-methods="com.test.AmazonBookBuyTest.withoutPassword" finished-at="2021-06-03T14:22:24Z">
+        <test-method status="PASS" signature="invalidPassword()[pri:0, instance:com.test.AmazonBookBuyTest@1fbc7afb]" name="invalidPassword" duration-ms="1193" started-at="2021-06-05T18:36:30Z" depends-on-methods="com.test.AmazonBookBuyTest.withoutPassword" finished-at="2021-06-05T18:36:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidPassword -->

@@ -1,20 +1,28 @@
 package com.test;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
+import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+
+import org.openqa.selenium.StaleElementReferenceException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class AmazonBookBuyTest {
@@ -23,9 +31,12 @@ public class AmazonBookBuyTest {
 	Select drpCategory;
 	WebElement searchbox;
 	WebElement searchclick;
+	WebElement bestSellertag;
+	WebElement paperbackformat;
+	WebElement kindleformat;
+	WebElement audiblebooks;
 	WebElement kindlelink;
 	WebElement buybutton;
-	WebElement ele5;
 	WebElement createacc;
 	WebElement customername;
 	WebElement customeremail;
@@ -36,18 +47,31 @@ public class AmazonBookBuyTest {
 	WebElement createmazonenewacc;
 	String currentHandle;
 
-	@BeforeClass
-	public void setup() {
+	@BeforeSuite
+	public void setUp() {
 		System.setProperty("webdriver.chrome.driver", "D://webdrivers//chromedriver_win32//chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("https:www.amazon.co.uk");
+		System.out.println("The setup process is completed");
 	}
 
-	@Test (priority =1)
-	public void searchBook() throws InterruptedException {
+	@BeforeTest
+	public void profileSetup() {
+		driver.manage().window().maximize();
+		System.out.println("Screen is maximise successfully");
+
+	}
+
+	@BeforeClass
+	public void setup() {
+		driver.get("https:www.amazon.co.uk");
+		System.out.println("successfully  load website");
+	}
+
+	// Scenario1: Search book via searchbox
+	@Test(priority = 1)
+	public void searchBook() {
 		// Accept the pop up for cookies
 		driver.findElement(By.id("sp-cc-accept")).click();
 
@@ -58,21 +82,120 @@ public class AmazonBookBuyTest {
 		drpCategory = new Select(driver.findElement(By.id("searchDropdownBox")));
 		drpCategory.selectByValue("search-alias=stripbooks");
 
-// Search book.
 		searchbox = driver.findElement(By.id("twotabsearchtextbox"));
 		searchbox.clear();
 		searchbox.sendKeys("harry potter and the philosophers stone book");
 		searchclick = driver.findElement(By.id("nav-search-submit-button"));
-		searchclick.submit();}
+		searchclick.submit();
+	}
 
-// Check Kindle Edition
-	@Test(dependsOnMethods="searchBook") 
+	// Scenario2: check book in best seller list or not
+	@Test(dependsOnMethods = "searchBook")
+	public void BookInBestSeller() throws InterruptedException {
+		bestSellertag = driver.findElement(By.id("B017V51FEG-best-seller-label"));
+		Assert.assertEquals(true, bestSellertag.isDisplayed());
+	}
+
+	// Scenario 3: Verify other author and book related information on Search page
+	@Test(dependsOnMethods = "searchBook")
+	public void checkBookInfo() {
+		try {
+			searchbox.clear();
+			searchbox.sendKeys("Humankind: A Hopeful History");
+		} catch (StaleElementReferenceException e) {
+
+			searchbox = driver.findElement(By.id("twotabsearchtextbox"));
+			searchbox.clear();
+			searchbox.sendKeys("Humankind: A Hopeful History");
+			// obtain value entered
+			String s = searchbox.getAttribute("value");
+			System.out.println("Value entered is: " + s);
+		}
+
+		// Click on search
+		try {
+			searchclick.submit();
+		} catch (StaleElementReferenceException e) {
+			searchclick = driver.findElement(By.id("nav-search-submit-button"));
+			searchclick.submit();
+		}
+
+		// Scenario 3.2: Check PaperBack Format
+		paperbackformat = driver.findElement(By.xpath(
+				".//span[text()='13 May 2021']/parent::div/parent::div/parent::div/following-sibling::div//a[text()='Paperback']"));
+
+		if (paperbackformat.isDisplayed()) {
+			System.out.println("PaperBack format is available");
+			if (paperbackformat.isEnabled()) {
+				System.out.println("PaperBack format is clickable");
+			} else {
+				System.out.println("PaperBack format is not clickable");
+			}
+		} else {
+			System.out.println("PaperBack format is not available");
+		}
+
+		// Scenario 3.3: Check Kindle Format
+		kindleformat = driver.findElement(By.xpath(
+				".//span[text()='13 May 2021']/parent::div/parent::div/parent::div/following-sibling::div//a[text()='Kindle Edition']"));
+
+		if (kindleformat.isDisplayed()) {
+			System.out.println("Kindle format is available");
+			if (kindleformat.isEnabled()) {
+				System.out.println("Kindle is clickable");
+			} else {
+				System.out.println("Kindle is not clickable");
+			}
+		} else {
+			System.out.println("kindle is not available");
+		}
+
+		// Scenario 3.4: Audible AudioBooks Format
+
+		audiblebooks = driver.findElement(By.xpath(
+				".//span[text()='13 May 2021']/parent::div/parent::div/parent::div/following-sibling::div//a[text()='Audible Audiobooks']"));
+
+		if (audiblebooks.isDisplayed()) {
+			System.out.println("Audible audiobook is available");
+			if (audiblebooks.isEnabled()) {
+				System.out.println("Audible audiobooklink is clickable");
+			} else {
+				System.out.println("Audible audiobook is not clickable");
+			}
+		} else {
+			System.out.println("Audible audiobook is not available");
+		}
+
+	}
+
+	// Scenario 4: Check Kindle Edition
+	@Test(dependsOnMethods = "searchBook")
+
 	public void checkKindleformat() {
+		try {
+			searchbox.clear();
+			searchbox.sendKeys("harry potter and the philosophers stone book");
+		} catch (StaleElementReferenceException e) {
+
+			searchbox = driver.findElement(By.id("twotabsearchtextbox"));
+			searchbox.clear();
+			searchbox.sendKeys("harry potter and the philosophers stone book");
+			// obtain value entered
+			String s = searchbox.getAttribute("value");
+			System.out.println("Value entered is: " + s);
+		}
+
+		// Click on search
+		try {
+			searchclick.submit();
+		} catch (StaleElementReferenceException e) {
+			searchclick = driver.findElement(By.id("nav-search-submit-button"));
+			searchclick.submit();
+		}
 		String bookformat = "Kindle Edition";
-		
-// getPageSource() to get page source
+
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)");
+		js.executeScript("window.scrollBy(0,1000)");
 		if (driver.getPageSource().contains("Kindle Edition")) {
 
 			kindlelink = driver.findElement(By.xpath(
@@ -86,36 +209,42 @@ public class AmazonBookBuyTest {
 		buybutton = driver.findElement(By.id("one-click-button"));
 		buybutton.click();
 		createacc = driver.findElement(By.id("createAccountSubmit"));
-		createacc.click();}
-//
-// Verify all elements on sign up page
-	
-	    @Test(dependsOnMethods="checkKindleformat")
-	    public void verifyAllElements() {
+		createacc.click();
+	}
+
+	// Scenario 5: Verify all elements on sign up page
+
+	@Test(dependsOnMethods = "checkKindleformat")
+	public void verifyAllElements() {
 		customername = driver.findElement(By.xpath("//input[@name='customerName']//parent::div/label"));
-		System.out.println(customername.isDisplayed());
+		customername.isDisplayed();
+		System.out.println("Your Name field is present");
 
 		customeremail = driver.findElement(By.xpath("//input[@name='email']//parent::div/label"));
-		System.out.println(customeremail.isDisplayed());
+		customeremail.isDisplayed();
+		System.out.println("Email field is prsent");
 
 		password = driver.findElement(By.xpath("//input[@name='password']//parent::div/label"));
-		System.out.println(password.isDisplayed());
+		password.isDisplayed();
+		System.out.println("Password textbox is present");
 
 		repassword = driver.findElement(By.xpath("//input[@name='passwordCheck']//parent::div/label"));
-		System.out.println(repassword.isDisplayed());
+		repassword.isDisplayed();
+		System.out.println("Re-entered password ttexxt box  is present");
 
 		submit = driver.findElement(By.id("continue"));
-		System.out.println(submit.isEnabled());
-	    }
+		submit.isEnabled();
+		System.out.println("Create your Amazon Account button is Enable");
+	}
 
-// sign up page with all correct details
-	    
-	    @Test(dependsOnMethods="verifyAllElements")
-	    public void correctUserdetails() {
+	// Scenario 5.2 :Sign up page with all correct details
+
+	@Test(dependsOnMethods = "verifyAllElements")
+	public void correctUserdetails() {
 		customername = driver.findElement(By.id("ap_customer_name"));
 		customername.click();
 		customername.clear();
-		customername.sendKeys("Amazonuser");
+		customername.sendKeys("newuser");
 
 		customeremail = driver.findElement(By.id("ap_email"));
 		customeremail.click();
@@ -134,7 +263,6 @@ public class AmazonBookBuyTest {
 
 		submit = driver.findElement(By.id("continue"));
 		submit.click();
-		
 
 		// Set <String> allWindows = driver.getWindowHandles();
 		//
@@ -150,14 +278,15 @@ public class AmazonBookBuyTest {
 		signin = driver.findElement(By.xpath("//div/a[contains(text(), 'Sign-In')]"));
 		signin.click();
 
-// Click on create amazon
+		// Click on create amazon
 		createmazonenewacc = driver.findElement(By.xpath("//span[@id='auth-create-account-link']"));
 		createmazonenewacc.click();
 
-	    }
-// Registration without providing Name field
-	    @Test(dependsOnMethods="correctUserdetails")
-	    public void emptyCustomerName(){
+	}
+
+	// Scenario 5.3: Registration without providing Name field
+	@Test(dependsOnMethods = "correctUserdetails")
+	public void emptyCustomerName() {
 		customername = driver.findElement(By.id("ap_customer_name"));
 		customername.click();
 		customername.clear();
@@ -189,15 +318,15 @@ public class AmazonBookBuyTest {
 		Assert.assertEquals(actualErrorMsg, expectedErrorMsg);
 		System.out.println(actualErrorMsg);
 		driver.navigate().refresh();
-	    }
+	}
 
-// Registration without providing user email field
-	    @Test(dependsOnMethods="emptyCustomerName")
-	    public void emptyemail() {
+	// Scenario 5.4: Registration without providing user email field
+	@Test(dependsOnMethods = "emptyCustomerName")
+	public void emptyemail() {
 		customername = driver.findElement(By.id("ap_customer_name"));
 		customername.click();
 		customername.clear();
-		customername.sendKeys("Amazonuser");
+		customername.sendKeys("newuser");
 
 		customeremail = driver.findElement(By.id("ap_email"));
 		customeremail.click();
@@ -219,20 +348,20 @@ public class AmazonBookBuyTest {
 
 		String expectedErrorMsg2 = "Enter your e-mail";
 		WebElement exp2 = driver.findElement(
-		By.xpath("//div[@id='auth-email-missing-alert']/div/div[contains(text(), 'Enter your e-mail')]"));
+				By.xpath("//div[@id='auth-email-missing-alert']/div/div[contains(text(), 'Enter your e-mail')]"));
 		String actualErrorMsg2 = exp2.getText();
 		Assert.assertEquals(actualErrorMsg2, expectedErrorMsg2);
 		System.out.println(actualErrorMsg2);
 		driver.navigate().refresh();
-	    }
+	}
 
-	    // Registration with email id which already/invalid have account
-	    @Test(dependsOnMethods="emptyemail")
-	    public void invalidemail(){
+	// Registration with email id which already/invalid have account
+	@Test(dependsOnMethods = "emptyemail")
+	public void invalidemail() {
 		customername = driver.findElement(By.id("ap_customer_name"));
 		customername.click();
 		customername.clear();
-		customername.sendKeys("Amazonuser");
+		customername.sendKeys("newuser");
 
 		customeremail = driver.findElement(By.id("ap_email"));
 		customeremail.click();
@@ -260,21 +389,21 @@ public class AmazonBookBuyTest {
 
 		signin = driver.findElement(By.xpath("//div/a[contains(text(), 'Sign-In')]"));
 		signin.click();
-		
+
 		// Click on create amazon
 		createmazonenewacc = driver.findElement(By.xpath("//span[@id='auth-create-account-link']"));
 		createmazonenewacc.click();
-	    }
-	    
-// Registration without providing password field
-	    
-	    @Test(dependsOnMethods="invalidemail")
-	    public void withoutPassword() {
+	}
+
+	// Scenario 5.5: Registration without providing password field
+
+	@Test(dependsOnMethods = "invalidemail")
+	public void withoutPassword() {
 
 		customername = driver.findElement(By.id("ap_customer_name"));
 		customername.click();
 		customername.clear();
-		customername.sendKeys("Amazonuser");
+		customername.sendKeys("newuser");
 
 		customeremail = driver.findElement(By.id("ap_email"));
 		customeremail.click();
@@ -300,20 +429,20 @@ public class AmazonBookBuyTest {
 		Assert.assertEquals(actualErrorMsg4, expectedErrorMsg4);
 		System.out.println(actualErrorMsg4);
 		driver.navigate().refresh();
-	    }
+	}
 
-// Registration with invalid password
-		@Test(dependsOnMethods="withoutPassword")
-		public void invalidPassword() {
+	// Scenario 5.6: Registration with invalid password
+	@Test(dependsOnMethods = "withoutPassword")
+	public void invalidPassword() {
 		customername = driver.findElement(By.id("ap_customer_name"));
 		customername.click();
 		customername.clear();
-		customername.sendKeys("Amazonuser");
+		customername.sendKeys("newuser");
 
 		customeremail = driver.findElement(By.id("ap_email"));
 		customeremail.click();
 		customeremail.clear();
-		customeremail.sendKeys("amazon@test.com");
+		customeremail.sendKeys("nyoamazonacc@gmail.com");
 
 		password = driver.findElement(By.id("ap_password"));
 		password.click();
@@ -338,10 +467,8 @@ public class AmazonBookBuyTest {
 
 	}
 
-
- @AfterMethod
- public void tearDown()
- {
- driver.quit();
- }
+	@AfterClass()
+	public void tearDown() {
+		driver.close();
+	}
 }
